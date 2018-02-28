@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{991856D4-7B07-4589-BC06-7855F76907F2}</ProjectGuid>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.VisualStudio.RegularExpression</RootNamespace>
+    <AssemblyName>Microsoft.VisualStudio.RegularExpression</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>MyKeyFile.snk</AssemblyOriginatorKeyFile>
+    <GeneratePkgDefFile>false</GeneratePkgDefFile>
+    <SccProjectName>%24/editorsamples/Regex Editor/src/RegexEditor</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>https://tfs01.codeplex.com</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Microsoft.VisualStudio.RegularExpression.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Release\Microsoft.VisualStudio.RegularExpression.XML</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>RegexEditor.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.CoreUtility, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>$(ProgramFiles)\Microsoft Visual Studio 10.0\Common7\IDE\CommonExtensions\Platform\Editor\Microsoft.VisualStudio.CoreUtility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.ExtensibilityHosting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>$(ProgramFiles)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\Microsoft.VisualStudio.ExtensibilityHosting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Language.Intellisense, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>$(ProgramFiles)\Microsoft Visual Studio 10.0\Common7\IDE\CommonExtensions\Platform\Editor\Microsoft.VisualStudio.Language.Intellisense.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Text.Data, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>$(ProgramFiles)\Microsoft Visual Studio 10.0\Common7\IDE\CommonExtensions\Platform\Editor\Microsoft.VisualStudio.Text.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Text.Logic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>$(ProgramFiles)\Microsoft Visual Studio 10.0\Common7\IDE\CommonExtensions\Platform\Editor\Microsoft.VisualStudio.Text.Logic.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Text.UI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>$(ProgramFiles)\Microsoft Visual Studio 10.0\Common7\IDE\CommonExtensions\Platform\Editor\Microsoft.VisualStudio.Text.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Text.UI.Wpf, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>$(ProgramFiles)\Microsoft Visual Studio 10.0\Common7\IDE\CommonExtensions\Platform\Editor\Microsoft.VisualStudio.Text.UI.Wpf.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="windowsbase">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BraceMatching\BraceMatchingPresenterFactory.cs" />
+    <Compile Include="BraceMatching\BraceMatchingPresenter.cs" />
+    <Compile Include="BraceMatching\RegexBraceMatcher.cs" />
+    <Compile Include="BraceMatching\IBraceMatcherProvider.cs" />
+    <Compile Include="BraceMatching\IBraceMatcher.cs" />
+    <Compile Include="BraceMatching\RegexBraceMatcherProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Coloring\ClassificationFormatDefinitions.cs" />
+    <Compile Include="Coloring\ClassificationTypeDefinitions.cs" />
+    <Compile Include="Coloring\RegexClassifier.cs" />
+    <Compile Include="Coloring\RegexClassifierProvider.cs" />
+    <Compile Include="Intellisense\CompletionProviders\BracketCompletions.cs" />
+    <Compile Include="Intellisense\CompletionProviders\SlashCompletions.cs" />
+    <Compile Include="Intellisense\CompletionProviders\ParenthesisCompletions.cs" />
+    <Compile Include="Intellisense\CompletionProviders\SquareBracketCompletions.cs" />
+    <Compile Include="Intellisense\CompletionProviders\RegexCompletionProvider.cs" />
+    <Compile Include="Intellisense\RegexCompletionSourceProvider.cs" />
+    <Compile Include="KeyTypeConverter.cs" />
+    <Compile Include="LaunchingPoints\LaunchEditorKeyProcessor.cs" />
+    <Compile Include="LaunchingPoints\LaunchEditorKeyProcessorProvider.cs" />
+    <Compile Include="LaunchingPoints\LaunchEditorMouseProcessor.cs" />
+    <Compile Include="LaunchingPoints\LaunchEditorMouseProcessorProvider.cs" />
+    <Compile Include="LaunchingPoints\RegexLineData.cs" />
+    <Compile Include="Parser\ParserRunnerProvider.cs" />
+    <Compile Include="Parser\Parser.cs" />
+    <Compile Include="Parser\ParserRunner.cs" />
+    <Compile Include="Parser\Token.cs" />
+    <Compile Include="Parser\TokenKind.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Intellisense\RegexCompletion.cs" />
+    <Compile Include="Intellisense\RegexCompletionController.cs" />
+    <Compile Include="Intellisense\RegexCompletionControllerProvider.cs" />
+    <Compile Include="Intellisense\RegexCompletionSource.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RegexContentType.cs" />
+    <Compile Include="RegexEditorResult.cs" />
+    <Compile Include="RegexEditorService.cs" />
+    <Compile Include="RegexFileExtensionDefinition.cs" />
+    <Compile Include="RegexKeyProcessor.cs" />
+    <Compile Include="RegexKeyProcessorProvider.cs" />
+    <Compile Include="TextViewEventManager.cs" />
+    <Compile Include="UI\RegexEditorDialog.xaml.cs">
+      <DependentUpon>RegexEditorDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RegexEditorKeyProcessor.cs" />
+    <Compile Include="UI\RegexEditorProcessorProvider.cs" />
+    <Compile Include="UI\RegexRepositoryItem.cs" />
+    <Compile Include="UI\RegexRepositoryService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyKeyFile.snk" />
+    <None Include="RegexEditor.ruleset" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Regex_large.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Regex_small.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <None Include="source.extension.vsixmanifest" />
+    <Resource Include="Resources\DeleteRepositoryItem.png" />
+    <Resource Include="Resources\DuplicateRepositoryItem.png" />
+    <Content Include="Expressions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UI\RegexEditorDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\VSSDK\Microsoft.VsSDK.targets" />
+  <PropertyGroup>
+    <PostBuildEvent />
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  -->
+</Project>

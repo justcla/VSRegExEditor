@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfRegexRepositoryItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RegexRepositoryItem>
+    <Author>Microsoft</Author>
+    <Category>default</Category>
+    <Description>Matches international phone numbers</Description>
+    <Matches>+ 54 11 5246 4306</Matches>
+    <Regex>\+\s\d{2}\s\d{2}\s\d{4}\s\d{4}</Regex>
+    <Title>Phone</Title>
+  </RegexRepositoryItem>
+  <RegexRepositoryItem>
+    <Author>Microsoft</Author>
+    <Category>default</Category>
+    <Description>Matches valid emails</Description>
+    <Matches>tom@microsoft.com</Matches>
+    <Regex>(?&lt;name&gt;\S+)@(?&lt;domain&gt;\S+)</Regex>
+    <Title>eMail</Title>
+  </RegexRepositoryItem>
+  <RegexRepositoryItem>
+    <Author>Microsoft</Author>
+    <Category>default</Category>
+    <Description>Matches MM-DD-YYYY dates</Description>
+    <Matches>12/31/2008</Matches>
+    <Regex>(?&lt;month&gt;\d?\d)[-/](?&lt;day&gt;\d?\d)[-/](?&lt;year&gt;\d+)</Regex>
+    <Title>Date</Title>
+  </RegexRepositoryItem>
+  <RegexRepositoryItem>
+    <Author>Microsoft</Author>
+    <Category>default</Category>
+    <Description>Matches inline property getter</Description>
+    <Matches>public string Foo { get { return ""; } }</Matches>
+    <Regex>(?&lt;visibility&gt;public|private|internal|protected)\s+(?&lt;type&gt;\w+)\s+(?&lt;name&gt;\w+)\s+\{\s*get\s*(;|\{\s+(?&lt;getter&gt;.*;)\s*\})\s*\}</Regex>
+    <Title>Inline Property Getter</Title>
+  </RegexRepositoryItem>
+  <RegexRepositoryItem>
+    <Author>Microsoft</Author>
+    <Category>default</Category>
+    <Description>Matches XML elements</Description>
+    <Matches>&lt;ElementName Param1="value1" Param2="value2" /&gt;</Matches>
+    <Regex>&lt;(?&lt;elementName&gt;\w+)(\s+(?&lt;paramName&gt;[\w^"]+)="(?&lt;paramValue&gt;[^"]*)")*\s+/&gt;</Regex>
+    <Title>XML Element</Title>
+  </RegexRepositoryItem>
+  <RegexRepositoryItem>
+    <Author>Microsoft</Author>
+    <Category>default</Category>
+    <Description>Matches valid URIs</Description>
+    <Matches>http://www.microsoft.com</Matches>
+    <Regex>(?&lt;protocol&gt;http|ftp|https|file)://(?&lt;domain&gt;[\w\.]+)(?&lt;path&gt;/.*)?</Regex>
+    <Title>URI</Title>
+  </RegexRepositoryItem>
+</ArrayOfRegexRepositoryItem>

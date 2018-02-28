@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  <Identifier Id="Setup..33B20CD8-5991-450D-A9E9-718DC607AECC">
+    <Name>Regex Editor</Name>
+    <Author>Microsoft</Author>
+    <Version>1.5</Version>
+    <Description xml:space="preserve">IntelliSense, syntax coloring, in-place testing and more for your regular expressions, right inside the editor!</Description>
+    <Locale>1033</Locale>
+    <Icon>Regex_small.png</Icon>
+    <PreviewImage>Regex_large.png</PreviewImage>
+    <SupportedProducts>
+      <VisualStudio Version="10.0">
+        <Edition>Pro</Edition>
+      </VisualStudio>
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.0" />
+  </Identifier>
+  <References />
+  <Content>
+    <MefComponent>|%CurrentProject%|</MefComponent>
+  </Content>
+</Vsix>

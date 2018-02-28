@@ -1,0 +1,72 @@
+﻿<Window x:Class="Microsoft.VisualStudio.RegularExpression.UI.RegexEditorDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Regex Editor" MaxHeight="230" MinHeight="230" Width="700" MinWidth="600" WindowStyle="ToolWindow" >
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Label HorizontalAlignment="Left" Margin="35,18,0,0" Name="labelExpressionTitle" VerticalAlignment="Top" Height="25.96" Width="44.297">Title:</Label>
+            <TextBox Height="23" Margin="85,20,325,0" Name="textBoxExpressionTitle" VerticalAlignment="Top" Text="{Binding SelectedItem.Title, UpdateSourceTrigger=PropertyChanged}" />
+            <Label HorizontalAlignment="Left" Margin="12,50,0,0" Name="labelExpression" VerticalAlignment="Top" Height="25.96" Width="68.593">Expression:</Label>
+            <Grid MaxHeight="65" Margin="86,52,35,0" >
+                <Border BorderThickness="1" BorderBrush="Black" >
+                    <Grid Name="expressionContainer" />
+                </Border>
+            </Grid>
+        </Grid>
+        <Expander Grid.Row="1" VerticalAlignment="Top" Header="More..." Margin="12,0,12,0" Name="expander" Collapsed="Expander_Collapsed" Expanded="Expander_Expanded" Height="Auto">
+            <TabControl Margin="10" >
+                <TabControl.Items>
+                    <TabItem Header="Test"  >
+                        <Grid>
+                            <Label Height="28" HorizontalAlignment="Left" Margin="15,14,0,0" Name="labelMatches" VerticalAlignment="Top" Width="120">Matches:</Label>
+                            <Label Height="28" HorizontalAlignment="Left" Margin="28,134,0,0" Name="labelResult" VerticalAlignment="Top" Width="120">Result:</Label>
+                            <TreeView Margin="73,134,22,16" IsTabStop="False"  Name="treeViewResult" MinHeight="150" SelectedItemChanged="TreeViewResult_SelectedItemChanged"  />
+                            <TextBox  Height="104" Margin="73,14,170,0" Name="textBoxMatches" VerticalAlignment="Top" AcceptsReturn="True" Text="{Binding SelectedItem.Matches, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBoxMatches_LostFocus"  />
+                            <Button Height="23" HorizontalAlignment="Right" Margin="0,30.48,80,0" Name="buttonMatch" VerticalAlignment="Top" Width="75" Click="ButtonMatch_Click">_Match</Button>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Saved Expressions" >
+                        <Grid>
+                            <Label Height="28" HorizontalAlignment="Left" Margin="15,14,0,0" Name="labelFilter" VerticalAlignment="Top" Width="120">Filter:</Label>
+                            <TextBox  Height="20" Margin="130,14,10,0" Name="textBoxFilter" VerticalAlignment="Top" AcceptsReturn="True" TextChanged="textBoxFilter_TextChanged" />
+                            <DataGrid Margin="10,40,10,10" x:Name="regexRepositoryItemsDataGrid" ItemsSource="{Binding RegexRepositoryService.FilteredItems}" Height="250"
+                                     AutoGenerateColumns="False" SelectionChanged="RegexRepositoryItemsDataGrid_SelectionChanged" CanUserAddRows="False"
+                                  
+                                     >
+                            <DataGrid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Name="menuItemDeleteRepositoryItem"  Header="Delete" Click="MenuItemDeleteRepositoryItem_Click">
+                                        <MenuItem.Icon>
+                                            <Image Source="..\Resources\DeleteRepositoryItem.png" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <MenuItem Name="menuItemDuplicateRepositoryItem" Header="Duplicate" Click="MenuItemDuplicateRepositoryItem_Click" >
+                                        <MenuItem.Icon>
+                                            <Image Source="..\Resources\DuplicateRepositoryItem.png" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="120" />
+                                <DataGridTextColumn Header="Author" Binding="{Binding Author}" Width="80" />
+                                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="240" />
+                                <DataGridTextColumn Header="Regex" Binding="{Binding Regex}" IsReadOnly="True" Width="150" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                            </Grid>
+                    </TabItem>
+                </TabControl.Items>
+            </TabControl>
+        </Expander>
+        <Grid Grid.Row="2" Margin="0,10,0,0">
+            <Button Height="23"  HorizontalAlignment="Right" Margin="0,0,96,12" Name="buttonAccept" IsDefault="True"  VerticalAlignment="Bottom" Width="75" Click="ButtonAccept_Click">Accept</Button>
+            <Button Height="23" HorizontalAlignment="Right" Margin="0,0,15,12" Name="buttonCancel" IsCancel="True"  VerticalAlignment="Bottom" Width="75" Click="ButtonCancel_Click">Cancel</Button>
+        </Grid>
+    </Grid>
+</Window>
